@@ -2,9 +2,10 @@
 
 export interface Topics {
   id: number;
+  name: string;
   content: string;
-  updatedAt: string;
   createdAt: string;
+  updatedAt: string;
   version: number;
   parentTopicId: numeber;
 }

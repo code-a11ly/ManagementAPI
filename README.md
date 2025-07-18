@@ -41,3 +41,17 @@ Run the code:
 > node src/app.ts
 
 ## How is the code structured
+
+Data: where the data itself is stored.
+
+Models: where the base for the data structure is informed.
+
+Services: where the data is stored or gotten from the Data.
+
+Middleware: Where the data provided (in Controllers) is verified if it is according to the file type
+provided in the models, before being passed for storage (in Services).
+
+Controllers: where the requests arrive and depending on the answers of the services it will give
+back the data or an error message.
+
+Routes: where the routes that give access to each Controller are stored.
