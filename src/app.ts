@@ -1,9 +1,16 @@
 import express from 'express';
+
 import { readData, writeData } from './services/resourcesServices';
 import { Resources } from './models/resourceModel';
 
 const app = express();
+const PORT = 3000;
+
 app.use(express.json());
+
+app.get('/', (_req, res) => {
+  res.send('Hello, TypeScript with Node.js!');
+});
 
 // GET all items
 app.get('/resources', (req, res) => {
@@ -23,11 +30,11 @@ app.post('/resources', (req, res) => {
     updatedAt: req.body.updatedAt,
     createdAt: req.body.createdAt
   };
-  resources.push(newItem);
+  resources.push(newResource);
   writeData(resources);
   res.status(201).json(newResource);
 });
 
-app.listen(3000, () => {
-  console.log('✅ Server running on http://localhost:3000');
+app.listen(PORT, () => {
+  console.log(`🚀 Server is running at http://localhost:${PORT}`);
 });

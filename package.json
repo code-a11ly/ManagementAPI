@@ -1,22 +1,24 @@
 {
   "name": "managementapi",
   "version": "1.0.0",
-  "description": "",
+  "description": "In enterprises we often face a challenge: \"data and content management\", remember that car key that disappeared just before you really needed to go out? or better that data file that you really needed to present to win the trust of that new client but could not find?",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "ts-node src/app.ts",
+    "build": "tsc",
+    "start": "node dist/app.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "type": "commonjs",
+  "dependencies": {
+    "express": "^5.1.0"
+  },
   "devDependencies": {
     "@types/express": "^5.0.3",
     "@types/node": "^24.0.14",
     "ts-node": "^10.9.2",
     "typescript": "^5.8.3"
-  },
-  "dependencies": {
-    "express": "^5.1.0"
   }
 }

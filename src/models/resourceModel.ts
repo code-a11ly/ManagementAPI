@@ -2,7 +2,7 @@
 
 export interface Resources {
   id: number;
-  topic: number;
+  topic: string;
   url: string;
   description: string;
   type: string;

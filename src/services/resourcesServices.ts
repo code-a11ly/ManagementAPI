@@ -2,7 +2,10 @@
 import fs from 'fs';
 import { Resources } from '../models/resourceModel'
 
-const FILE_PATH = '../data/resources.json'
+import path from 'path';
+
+const FILE_PATH = path.resolve(__dirname, '../data/resources.json');
+
 
 export function readData(): Resources[] {
   if(!fs.existsSync(FILE_PATH)) fs.writeFileSync(FILE_PATH, '[]');

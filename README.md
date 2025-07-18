@@ -34,7 +34,7 @@ git clone this repository:
 
 Install all the necessary dependencies:
 
-> npm install --save-dev typescript ts-node @types/node
+> npm install --save-dev typescript ts-node @types/node @types/express
 
 Run the code:
 
