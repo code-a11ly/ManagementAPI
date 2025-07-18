@@ -1,14 +1,33 @@
-const http = require('node:http');
+import express from 'express';
+import { readData, writeData } from './services/resourcesServices';
+import { Resources } from './models/resourceModel';
 
-const hostname = '127.0.0.1';
-const port = 3000;
+const app = express();
+app.use(express.json());
 
-const server = http.createServer((req, res) => {
-  res.statusCode = 200;
-  res.setHeader('Content-Type', 'text/plain');
-  res.end('Hello, World!\n');
+// GET all items
+app.get('/resources', (req, res) => {
+  const resources = readData();
+  res.json(resources);
 });
 
-server.listen(port, hostname, () => {
-  console.log(`Server running at http://${hostname}:${port}/`);
-}); 
+// POST new item
+app.post('/resources', (req, res) => {
+  const resources = readData();
+  const newResource: Resources = {
+    id: resources.length > 0 ? resources[resources.length - 1].id + 1 : 1,
+    topic: req.body.topic,
+    url: req.body.url,
+    description: req.body.description,
+    type: req.body.type,
+    updatedAt: req.body.updatedAt,
+    createdAt: req.body.createdAt
+  };
+  resources.push(newItem);
+  writeData(resources);
+  res.status(201).json(newResource);
+});
+
+app.listen(3000, () => {
+  console.log('✅ Server running on http://localhost:3000');
+});
