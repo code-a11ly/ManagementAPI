@@ -1,8 +1,8 @@
 
 import fs from 'fs';
+import path from 'path';
 import { Resources } from '../models/resourceModel'
 
-import path from 'path';
 
 const FILE_PATH = path.resolve(__dirname, '../data/resources.json');
 

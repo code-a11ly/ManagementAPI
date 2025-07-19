@@ -1,33 +1,27 @@
 
-
+import { Request, Response } from 'express';
+import { readData, writeData } from '../services/resourcesServices';
 import { Resources } from '../models/resourceModel';
-import resources from '../data/resource';
 
-let resourcesList: Resources[] = resources;
+// GET all items
+export function getAllResources(req: Request, res: Response) {
+  const resources = readData();
+  res.json(resources);
+};
 
-export function getAll(): Resources[] {
-  return resourcesList;
-}
-
-export function getById(id: number): Product | undefined {
-  return productList.find(p => p.id === id);
-}
-
-export function create(name: string, price: number): Product {
-  const newProduct: Product = { id: Date.now(), name, price };
-  productList.push(newProduct);
-  return newProduct;
-}
-
-export function update(id: number, name: string, price: number): Product | null {
-  const index = productList.findIndex(p => p.id === id);
-  if (index === -1) return null;
-  productList[index] = { id, name, price };
-  return productList[index];
-}
-
-export function remove(id: number): boolean {
-  const initialLength = productList.length;
-  productList = productList.filter(p => p.id !== id);
-  return productList.length < initialLength;
-}
+// POST new item
+export function addResources(req: Request, res: Response) {
+  const resources = readData();
+  const newResource: Resources = {
+    id: resources.length > 0 ? resources[resources.length - 1].id + 1 : 1,
+    topic: req.body.topic,
+    url: req.body.url,
+    description: req.body.description,
+    type: req.body.type,
+    updatedAt: req.body.updatedAt,
+    createdAt: req.body.createdAt
+  };
+  resources.push(newResource);
+  writeData(resources);
+  res.status(201).json(newResource);
+};
