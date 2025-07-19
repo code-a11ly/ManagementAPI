@@ -3,13 +3,13 @@ import { Request, Response } from 'express';
 import { readData, writeData } from '../services/resourcesServices';
 import { Resources } from '../models/resourceModel';
 
-// GET all items
+// GET all resources
 export function getAllResources(req: Request, res: Response) {
   const resources = readData();
   res.json(resources);
 };
 
-// POST new item
+// POST new resources
 export function addResources(req: Request, res: Response) {
   const resources = readData();
   const newResource: Resources = {

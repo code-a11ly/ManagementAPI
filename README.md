@@ -38,7 +38,7 @@ Install all the necessary dependencies:
 
 Run the code:
 
-> node src/app.ts
+> npm run dev
 
 ## How is the code structured
 

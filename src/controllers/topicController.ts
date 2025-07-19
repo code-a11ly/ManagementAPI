@@ -1,27 +1,27 @@
 
-
-import { readData, writeData } from '../services/resourcesServices';
-import { Resources } from '../models/resourceModel';
+import { Request, Response } from 'express';
+import { readData, writeData } from '../services/topicsServices';
+import { Topics } from '../models/topicModel';
 
 // GET all items
-export function getAllResources(req, res) {
-  const resources = readData();
-  res.json(resources);
+export function getAllTopics(req: Request, res: Response) {
+  const topics = readData();
+  res.json(topics);
 };
 
 // POST new item
-export function addResources(req, res) {
-  const resources = readData();
-  const newResource: Resources = {
-    id: resources.length > 0 ? resources[resources.length - 1].id + 1 : 1,
-    topic: req.body.topic,
-    url: req.body.url,
-    description: req.body.description,
-    type: req.body.type,
+export function addTopics(req: Request, res: Response) {
+  const topics = readData();
+  const newTopic: Topics = {
+    id: topics.length > 0 ? topics[topics.length - 1].id + 1 : 1,
+    name: req.body.name,
+    content: req.body.content,
+    createdAt: req.body.createdAt,
     updatedAt: req.body.updatedAt,
-    createdAt: req.body.createdAt
+    version: req.body.version,
+    parentTopicId: req.body.parentTopicId,
   };
-  resources.push(newResource);
-  writeData(resources);
-  res.status(201).json(newResource);
+  topics.push(newTopic);
+  writeData(topics);
+  res.status(201).json(newTopic);
 };

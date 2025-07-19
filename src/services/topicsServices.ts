@@ -8,9 +8,20 @@ const FILE_PATH = path.resolve(__dirname, '../data/topics.json');
 
 
 export function readData(): Topics[] {
-  if(!fs.existsSync(FILE_PATH)) fs.writeFileSync(FILE_PATH, '[]');
+  if(!fs.existsSync(FILE_PATH)) {
+    fs.writeFileSync(FILE_PATH, '[]', 'utf-8');
+    return [];
+  }
+
   const data = fs.readFileSync(FILE_PATH, 'utf-8');
-  return JSON.parse(data) as Resources[];
+
+  if (!data.trim()) {
+    fs.writeFileSync(FILE_PATH, '[]', 'utf-8');
+    return [];
+  }
+
+
+  return JSON.parse(data) as Topics[];
 }
 
 export function writeData(data: Topics[]): void {

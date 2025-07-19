@@ -25,23 +25,5 @@
     "type": "documentation",
     "updatedAt": "2025-07-16T16:00:00.000Z",
     "createdAt": "2025-07-16T16:00:00.000Z"
-  },
-  {
-    "id": 4,
-    "topic": "TypeScript",
-    "url": "https://www.typescriptlang.org/",
-    "description": "TypeScript official documentation",
-    "type": "documentation",
-    "updatedAt": "2025-07-16T16:00:00.000Z",
-    "createdAt": "2025-07-16T16:00:00.000Z"
-  },
-  {
-    "id": 5,
-    "topic": "TypeScript",
-    "url": "https://www.typescriptlang.org/",
-    "description": "TypeScript official documentation",
-    "type": "documentation",
-    "updatedAt": "2025-07-16T16:00:00.000Z",
-    "createdAt": "2025-07-16T16:00:00.000Z"
   }
 ]
