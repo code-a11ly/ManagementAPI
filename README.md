@@ -42,7 +42,7 @@ Run the code:
 
 ### :chart_with_upwards_trend: For testing
 
-Run the [tests](https://github.com/git@github.com:code-a11ly/ManagementAPI.git/tests.txt) in the comand line.
+Run the [tests.txt](/tests.txt) file in the comand line.
 
 To visualize just run in a browser:
 
