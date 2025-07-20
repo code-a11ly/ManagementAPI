@@ -1,0 +1,39 @@
+// RESOURCES
+
+curl -X POST http://localhost:5000/resources \
+  -H "Content-Type: application/json" \
+  -d '{
+    "topic": "TypeScript",
+    "url": "https://www.typescriptlang.org/",
+    "description": "TypeScript official documentation",
+    "type": "documentation",
+    "createdAt": "2025-07-16T16:00:00.000Z"
+  }'
+
+
+
+// TOPICS
+
+curl -X POST http://localhost:5000/topics \
+  -H "Content-Type: application/json" \
+  -d '{
+    "name": "A very good file",
+    "content": "this is the description",
+    "createdAt": "2025-07-16T16:00:00.000Z",
+    "updatedAt": "2025-07-16T16:00:00.000Z",
+    "version": "123",
+    "parentTopicId": "0"
+  }'
+
+
+
+// USERS
+
+curl -X POST http://localhost:5000/users \
+  -H "Content-Type: application/json" \
+  -d '{
+    "name": "Robert",
+    "email": "robert@email.com",
+    "role": "Admin",
+    "createdAt": "2025-07-16T16:00:00.000Z"
+  }'

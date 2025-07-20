@@ -8,10 +8,10 @@ const app = express();
 const PORT = 5000;
 
 app.use(express.json());
+
 app.use('/resources', resourceRoutes);
 app.use('/topics', topicRoutes);
 app.use('/users', userRoutes);
-
 
 
 app.listen(PORT, () => {

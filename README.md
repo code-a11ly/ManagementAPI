@@ -10,9 +10,9 @@ but could not find?
 Well for that we created the Management API, your content organized in a simple way
 so that you never miss what is rightfully yours.
 
-## Contents
+## :blue_book: Contents
 
-![](/Draw.io/blob/main/ManagementAPI.drawio.png)
+![](https://github.com/code-a11ly/Draw.io/blob/main/ManagementAPI.drawio.png)
 
 ### Resource
 First we have the resource or file that is stored, the file type etc.
@@ -26,7 +26,7 @@ Last but not least, the user and it's permissions:
 - Editor: Create, Edit and Read permissions
 - Admin: Delete, Create, Edit and Read permissions
 
-## How to install
+## :wrench: How to install
 
 git clone this repository:
 
@@ -40,7 +40,15 @@ Run the code:
 
 > npm run dev
 
-## How is the code structured
+### :chart_with_upwards_trend: For testing
+
+Run the [tests](https://github.com/git@github.com:code-a11ly/ManagementAPI.git/tests.txt) in the comand line.
+
+To visualize just run in a browser:
+
+> http://localhost:5000/resources
+
+## :file_folder: How is the code structured
 
 Data: where the data itself is stored.
 

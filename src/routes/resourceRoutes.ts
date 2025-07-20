@@ -10,6 +10,7 @@ const router = express.Router();
 router.get('/', resourcesController.getAllResources);
 // I have to correct the middleware
 // router.post('/', validateResources, resourcesController.addResources);
-router.post('/', resourcesController.addResources);
+router.post('/', resourcesController.createResources);
+router.put('/:id', resourcesController.updateResources);
 
 export default router;
